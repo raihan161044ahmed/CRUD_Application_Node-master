@@ -1,0 +1,36 @@
+<!-- form handling -->
+<form action="/api/users" method="POST" id="add_user">
+    <div class="new_user">
+        <div class="form-group">
+            <label for="title" class="text-light">Title</label>
+            <input type="hidden" name="id" value="">
+            <input type="text" name="title" value="" placeholder="user_name">
+        </div>
+        <div class="form-group">
+            <label for="textarea" class="text-light">Article_body</label>
+            <textarea type="textarea" name="article_body" value="" placeholder="add description.."></textarea>
+        </div>
+        <div class="form-group">
+            <label for="text" class="text-light">Author</label>
+            <input type="text" name="author" value="" placeholder="author name">
+        </div>
+        <div class="form-group">
+            <label for="publish_date" class="text-light">Publish Date</label>
+            <input type="date" name="publish_date" value="">
+        </div>
+        <div class="form-group">
+            <label for="category" class="text-light">Category</label>
+            <select name="category">
+                <option value="recent">Recent News</option>
+                <option value="technology">Technology</option>
+                <option value="politics">Politics</option>
+                <option value="bangladesh">Bangladesh</option>
+                <option value="world">World</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Save</button>
+        </div>
+
+    </div>
+</form>

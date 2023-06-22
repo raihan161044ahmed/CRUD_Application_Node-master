@@ -1,0 +1,67 @@
+<!-- include header -->
+<%- include('include/_header') %>
+<!-- /include header -->
+
+<!-- Main Site -->
+<main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+            <div class="filter">
+                <a href="/"><i class="fas fa-angle-double-left"></i> All Article</a>
+            </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">Update Article</h2>
+            <span class="text-light">Use the below form to Update an Article</span>
+        </div>
+
+        <!-- add user form -->
+        <!-- form handling -->
+        <form method="POST" id="update_user">
+            <div class="new_user">
+                <div class="form-group">
+                    <label for="title" class="text-light">Title</label>
+                    <input type="hidden" name="id" value="<%= user._id %>">
+                    <input type="text" name="title" value="<%= user.title %>" placeholder="user name">
+                </div>
+                <div class="form-group">
+                    <label for="Article_body" class="text-light">Article_body</label>
+                    <textarea name="article_body" placeholder="add details..."><%= user.article_body %></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="author" class="text-light">Author</label>
+                    <input type="text" name="author" value="<%= user.author %>" placeholder="author name">
+                </div>
+                <div class="form-group">
+                    <label for="publish_date" class="text-light">Publish Date</label>
+                    <input type="date" name="publish_date" value="<%= user.publish_date %>">
+                </div>
+                <div class="form-group">
+                    <label for="category" class="text-light">Category</label>
+                    <select name="category">
+                        <option value="recent" <% if(user.category === 'recent') { %> selected <% } %>>Recent News
+                        </option>
+                        <option value="technology" <% if(user.category === 'technology') { %> selected <% } %>>
+                            Technology</option>
+                        <option value="politics" <% if(user.category === 'politics') { %> selected <% } %>>Politics
+                        </option>
+                        <option value="bangladesh" <% if(user.category === 'bangladesh') { %> selected <% } %>>
+                            Bangladesh</option>
+                        <option value="world" <% if(user.category === 'world') { %> selected <% } %>>World</option>                   
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn text-dark update">Update</button>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+</main>
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('include/_footer') %>
+<!-- /include footer -->
